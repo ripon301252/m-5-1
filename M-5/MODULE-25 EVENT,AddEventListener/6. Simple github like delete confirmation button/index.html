@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Events</title>
+</head>
+<body>
+    <h1>Explore More Events</h1>
+    <button id="click">Event Click</button>
+    <button id="mouse-enter">Mouse Enter</button>
+    <button id="mouse-move">Mouse move</button>
+    <input id="event-blur" type="text">
+    <input id="key-down" type="text">
+    <input id="key-press" type="text">
+    <input id="key-up" type="text">
+    
+
+
+
+    <script>
+        document.getElementById('click').addEventListener('click', function(){
+            console.log('click');
+        })
+
+        document.getElementById('mouse-enter').addEventListener('mouseenter', function(){
+            console.log('mouseenter');
+        })
+
+        document.getElementById('mouse-move').addEventListener('mousemove', function(){
+            console.log('mousemove');
+        })
+
+        document.getElementById('event-blur').addEventListener('blur', function(){
+            console.log('blur');
+        })
+
+        document.getElementById('key-down').addEventListener('keydown', function(){
+            // console.log('key down');
+            console.log(event.target.value);
+        })
+
+        document.getElementById('key-press').addEventListener('keypress', function(){
+           // console.log('key press');
+            console.log(event.target.value);
+        })
+        
+        document.getElementById('key-up').addEventListener('keyup', function(){
+            // console.log('key up');
+            console.log(event.target.value);
+        })
+
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js DOM Summary</title>
+</head>
+<body>
+
+    <h1>Final DOM Event Handlers</h1>
+    <h3 id="handler-status">Default Text</h3>
+    <button onclick="handleOnClick()">Handle Event by Add onclick Function</button>
+    <button id="event-listener">Handle event by addEventListener</button>
+
+    <br><br>
+
+    <!-- option : 2 recap-->
+    <p id="input-text-display">Default Input Text</p>
+    <input id="input-field" type="text">
+    <button id="btn-update">Update</button>
+
+
+
+
+
+
+    <script>
+        // option : 1
+        function handleOnClick(){
+            const handlerStatus = document.getElementById('handler-status');
+            handlerStatus.innerText = 'Handeler by function attached on onclick attribute';
+
+            handlerStatus.style.backgroundColor = 'yellow'
+            handlerStatus.style.padding = '50px'
+            handlerStatus.style.border = '1px solid red'
+            handlerStatus.style.borderRadius = '10px'
+            handlerStatus.style.textAlign = 'center'
+            handlerStatus.style.fontSize = '30px'
+            handlerStatus.style.color = 'blue'
+            document.body.style.backgroundColor = 'green' 
+        }
+
+        // option : 2
+        document.getElementById('event-listener').addEventListener('click', function(){
+            const handlerStatus = document.getElementById('handler-status');
+            handlerStatus.innerText = 'Text updated by add Event listener button';
+
+            handlerStatus.style.backgroundColor = 'green'
+            handlerStatus.style.padding = '50px'
+            handlerStatus.style.border = '1px solid blue'
+            handlerStatus.style.borderRadius = '10px'
+            handlerStatus.style.textAlign = 'center'
+            handlerStatus.style.fontSize = '30px'
+            handlerStatus.style.color = 'purple'
+            document.body.style.backgroundColor = 'yellow' 
+        })
+
+
+        // option : 2 recap
+        document.getElementById('btn-update').addEventListener('click', function(){
+            const inputField = document.getElementById('input-field');
+            const inputText = inputField.value;
+
+            const P = document.getElementById('input-text-display');
+            P.innerText = inputText;
+            inputField.value = '';
+
+            P.style.color = 'blue';
+            P.style.fontSize = '50px';
+            
+        })
+    </script>
+</body>
+</html>
